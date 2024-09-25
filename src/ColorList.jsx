@@ -1,12 +1,12 @@
-export default function ColorList({selectedColor, setSelectedColor}) {
+export default function ColorList({ selectedColor, setSelectedColor }) {
     const colors = ["red", "orange", "yellow", "green", "blue", "violet", "black", "white"];
     return (
-        <ul id="colors-list">
+        <ul className="color-list">
             {colors.map((color) => (
                 <li 
                 key = {color}
                 className={color + (color === selectedColor ? " selected": "")}
-                onclick = {() => setSelectedColor(color)}
+                onClick = {() => setSelectedColor(color)}
                 ></li>
             ))
             }
