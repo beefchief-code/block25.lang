@@ -1,15 +1,20 @@
 // Write your Color component here
+import { useState } from 'react';
+import ColorList from './ColorList';
+import SelectColor from './SelectedColor';
+import "./index.css";
 
-const App = () => {
+export default function App() {
+  const [selectedColor, setSelectedColor] = useState();
   return (
-    <div id="container">
-      <div id="navbar">
-        <div>Currently selected: </div>
-        <div className="red">red</div>
-      </div>
-      <div id="colors-list">{/* colors go here */}</div>
+    <div className="box">
+      <SelectColor selectedColor={selectedColor}/>
+      <ColorList 
+      selectedColor={selectedColor}
+      setSelectedColor={setSelectedColor}
+      />
     </div>
   );
 };
 
-export default App;
+
